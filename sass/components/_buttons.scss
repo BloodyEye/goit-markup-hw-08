@@ -72,9 +72,23 @@
 }
 
 .filter-button-list {
-  @include flex-center();
-  justify-content: center;
-  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+
+  @media screen and (min-width: 768px) {
+    @include flex-center();
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 15px;
+  }
 
   &__item:not(:last-child) {
     margin-right: 8px;
@@ -106,5 +120,30 @@
   }
   &__icon {
     margin: auto;
+  }
+}
+
+.mobile-menu-button {
+  display: block;
+  margin-left: auto;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  fill: var(--black);
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+
+  &__icon {
+    margin: auto;
+  }
+
+  &:hover,
+  &:focus {
+    fill: var(--brand-blue-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 }

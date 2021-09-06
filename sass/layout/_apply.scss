@@ -1,4 +1,16 @@
-.service-list {
+/* Apply Section */
+
+.apply {
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+}
+
+.apply__section {
+  padding-top: 0;
+}
+
+.apply-list {
   @include flex-center($type: flex-start);
 
   &__item {

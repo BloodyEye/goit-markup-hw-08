@@ -1,12 +1,26 @@
 img {
   display: block;
+  width: 100%;
+  height: auto;
+}
+
+svg {
+  display: block;
 }
 
 body {
-  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
   color: var(--common-color);
   background-color: var(--white);
-  padding-top: 80px;
+  padding-top: 60px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 80px;
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 .list {

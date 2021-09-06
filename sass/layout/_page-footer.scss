@@ -1,29 +1,56 @@
+/* ------Footer Section------ */
 .footer-block {
   background-color: var(--background-black);
   padding-top: 60px;
   padding-bottom: 60px;
 
   &__wrapper {
-    display: flex;
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      flex-direction: column;
+    }
+  }
+
+  &__wrapper-address-social {
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      justify-content: space-around;
+    }
+
+    @media screen and (max-width: 1199px) {
+      margin-bottom: 60px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: calc((100% / 2) - 15px);
+      margin-right: 30px;
+    }
   }
 }
 
-.ftr-logo-adr,
-.subscribe,
-.social-network {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
+.footer-logo-address,
+.social-network,
+.subscribe {
+  @media screen and (max-width: 1199px) {
+    text-align: center;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+  }
 }
 
-.ftr-logo-adr,
-.social-network {
-  width: 270px;
-}
-
-.ftr-logo-adr--pos,
-.social-network--pos {
-  margin-right: 30px;
+.footer-logo-address {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
 }
 
 // .addres-block,
@@ -65,20 +92,37 @@
 .footer-connect-title {
   @extend %secondary-uppercase-title;
   display: block;
-  padding-top: 12px;
   margin-bottom: 20px;
   color: var(--white);
+
+  @media screen and (min-width: 768px) {
+    padding-top: 12px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 12px;
+  }
+}
+
+.subscribe {
+  @media screen and (min-width: 1200px) {
+    max-width: calc((100% / 2) - 15px);
+  }
 }
 
 .subscribe__form-interaction {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
 }
 
 .subscribe__input {
-  @include flex-center();
-  flex-basis: 100%;
+  display: block;
+  margin: auto;
+  max-width: 450px;
+  width: 100%;
   height: 50px;
   padding: 15px;
   color: var(--white);
@@ -89,8 +133,14 @@
   cursor: pointer;
   transition: border-color 250ms var(--timing-function);
 
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 20px;
+  }
+
   &--pos {
-    margin-right: 12px;
+    @media screen and (min-width: 1200px) {
+      margin-right: 12px;
+    }
   }
 
   &::placeholder {

@@ -1,24 +1,28 @@
-.soc-list__team-list {
+.socials-list__team-list {
   @include flex-center();
   justify-content: center;
 }
 
-.soc-list__footer-list {
+.socials-list__footer-list {
   @include flex-center($type: flex-start);
+  @media screen and (max-width: 1199px) {
+    justify-content: center;
+  }
 }
 
-.soc-list__item {
+.socials-list__item {
   &:not(:last-child) {
     margin-right: 10px;
   }
 }
 
-.soc-list__link {
+.socials-list__link {
   display: flex;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  transition: background-color 250ms var(--timing-function), fill 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function),
+    fill 250ms var(--timing-function);
 
   &--team {
     background-color: transparent;
@@ -37,6 +41,6 @@
   }
 }
 
-.soc-list__icon {
+.socials-list__icon {
   margin: auto;
 }

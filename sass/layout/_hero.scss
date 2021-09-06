@@ -1,25 +1,74 @@
+/* Hero */
+
 .hero__title {
   font-weight: 900;
-  font-size: 44px;
-  line-height: 1.3636;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--white);
   margin: 0 auto 30px;
-  max-width: 696px;
+
+  font-size: 26px;
+  line-height: 1.6154;
+  max-width: 360px;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 44px;
+    line-height: 1.3636;
+    max-width: 696px;
+  }
 }
 
 .hero__background {
+  @include flex-center();
   margin: 0 auto;
-  max-width: 100%;
-  height: 600px;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  max-width: 1600px;
+  height: 400px;
   background-color: var(--hero-background-grey);
   background-image: linear-gradient(var(--hero-overlay), var(--hero-overlay)),
-    url(../images/background.jpg);
+    url(../images/hero/hero-mobile.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @media screen and (min-width: 1200px) {
+    height: 600px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: linear-gradient(var(--hero-overlay), var(--hero-overlay)),
+      url(../images/hero/hero-mobile@2x.jpg);
+  }
+
+  @media screen and (min-width: 480px) {
+    background-image: linear-gradient(var(--hero-overlay), var(--hero-overlay)),
+      url(../images/hero/hero-tablet.jpg);
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          var(--hero-overlay),
+          var(--hero-overlay)
+        ),
+        url(../images/hero/hero-tablet@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(var(--hero-overlay), var(--hero-overlay)),
+      url(../images/hero/hero-desktop.jpg);
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          var(--hero-overlay),
+          var(--hero-overlay)
+        ),
+        url(../images/hero/hero-desktop@2x.jpg);
+    }
+  }
 }

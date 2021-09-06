@@ -22,7 +22,7 @@
 .hero__background {
   @include flex-center();
   margin: 0 auto;
-  max-width: 1600px;
+  max-width: 1980px;
   height: 400px;
   background-color: var(--hero-background-grey);
   background-image: linear-gradient(var(--hero-overlay), var(--hero-overlay)),

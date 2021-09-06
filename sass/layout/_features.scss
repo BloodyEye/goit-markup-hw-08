@@ -1,0 +1,37 @@
+.section__details {
+  padding-bottom: 0;
+}
+
+.details__list {
+  display: flex;
+}
+
+.details__item {
+  max-width: 270px;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &-title {
+    display: inline-block;
+    margin-bottom: 10px;
+    @extend %secondary-uppercase-title;
+  }
+
+  &-description {
+    @extend %gray-text;
+  }
+
+  &-icon-block {
+    display: flex;
+    margin-bottom: 30px;
+    height: 120px;
+    background-color: var(--background-grey);
+    border-radius: 4px;
+  }
+
+  &-icon {
+    margin: auto;
+  }
+}

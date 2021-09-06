@@ -1,0 +1,109 @@
+.header-block {
+  border-bottom: 1px solid var(--header-underline);
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+  top: 0;
+
+  &__wrapper {
+    @include flex-center();
+  }
+}
+
+/* Main Menu And Header Contacts Font */
+
+// .main-menu__link,
+// .header-contacts__link
+%nav-area--mail-phone-link {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.02em;
+  padding-top: 32px;
+  padding-bottom: 31px;
+}
+
+/* Main Menu */
+
+.nav-area {
+  @include flex-center();
+}
+
+.nav-area__list {
+  @include flex-center();
+}
+
+.nav-area__link {
+  @extend %nav-area--mail-phone-link;
+  position: relative;
+  color: var(--common-color);
+  display: inline-block;
+  transition: color 250ms var(--timing-function);
+
+  &:hover,
+  &:focus {
+    color: var(--brand-blue-color);
+  }
+
+  &--current {
+    color: var(--brand-blue-color);
+  }
+
+  &::after,
+  &--current::after {
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: var(--brand-blue-color);
+    height: 4px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: -1px;
+    transform: scalex(0%);
+    transition: transform 250ms var(--timing-function);
+  }
+
+  &--current::after {
+    transform: scalex(100%);
+  }
+
+  &:hover::after,
+  &:focus::after {
+    transform: scalex(100%);
+  }
+}
+
+.nav-area__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+/* Header Contacts */
+.mail-phone {
+  @include flex-center();
+  margin-left: auto;
+}
+
+.mail-phone__link {
+  @extend %nav-area--mail-phone-link;
+  @include flex-center();
+  color: var(--grey);
+  transition: color 250ms var(--timing-function);
+
+  &:hover,
+  &:focus {
+    color: var(--brand-blue-color);
+  }
+}
+
+.mail-phone__item {
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+.mail-phone__icon {
+  margin-right: 10px;
+  fill: currentColor;
+}

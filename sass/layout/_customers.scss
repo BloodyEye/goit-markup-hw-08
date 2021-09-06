@@ -1,0 +1,29 @@
+.customer-list {
+  display: flex;
+}
+
+.customer-list__item {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.customer-link {
+  display: flex;
+  height: 92px;
+  width: 170px;
+  border: 1px solid var(--icon-body-grey);
+  border-radius: 4px;
+  fill: var(--icon-body-grey);
+  transition: border-color 250ms var(--timing-function), fill 250ms var(--timing-function);
+
+  &:hover,
+  &:focus {
+    border-color: var(--brand-blue-color);
+    fill: var(--brand-blue-color);
+  }
+}
+
+.customer-link__icon {
+  margin: auto;
+}
